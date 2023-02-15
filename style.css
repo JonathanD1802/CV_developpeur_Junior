@@ -1,215 +1,72 @@
-@keyframes move {
+body {
+   margin: auto;
+   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+   overflow: auto;
+   background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+   animation: gradient 15s ease infinite;
+   background-size: 400% 400%;
+   background-attachment: fixed;
+}
+
+@keyframes gradient {
+   0% {
+       background-position: 0% 0%;
+   }
+   50% {
+       background-position: 100% 100%;
+   }
    100% {
-       transform: translate3d(0, 0, 1px) rotate(360deg);
+       background-position: 0% 0%;
    }
 }
 
-.background {
+.wave {
+   background: rgb(255 255 255 / 25%);
+   border-radius: 1000% 1000% 0 0;
    position: fixed;
-   width: 100vw;
-   height: 100vh;
-   top: 0;
+   width: 200%;
+   height: 12em;
+   animation: wave 10s -3s linear infinite;
+   transform: translate3d(0, 0, 0);
+   opacity: 0.8;
+   bottom: 0;
    left: 0;
-   background: #3E1E68;
-   overflow: hidden;
+   z-index: -1;
 }
 
-.background span {
-   width: 20vmin;
-   height: 20vmin;
-   border-radius: 20vmin;
-   backface-visibility: hidden;
-   position: absolute;
-   animation: move;
-   animation-duration: 45;
-   animation-timing-function: linear;
-   animation-iteration-count: infinite;
+.wave:nth-of-type(2) {
+   bottom: -1.25em;
+   animation: wave 18s linear reverse infinite;
+   opacity: 0.8;
 }
 
-
-.background span:nth-child(0) {
-   color: #E45A84;
-   top: 38%;
-   left: 33%;
-   animation-duration: 31s;
-   animation-delay: -12s;
-   transform-origin: 25vw -5vh;
-   box-shadow: -40vmin 0 5.437005394074882vmin currentColor;
-}
-.background span:nth-child(1) {
-   color: #E45A84;
-   top: 51%;
-   left: 10%;
-   animation-duration: 42s;
-   animation-delay: -7s;
-   transform-origin: 16vw -21vh;
-   box-shadow: 40vmin 0 5.577747738206101vmin currentColor;
-}
-.background span:nth-child(2) {
-   color: #E45A84;
-   top: 79%;
-   left: 33%;
-   animation-duration: 20s;
-   animation-delay: -36s;
-   transform-origin: 3vw 24vh;
-   box-shadow: -40vmin 0 5.126300732031521vmin currentColor;
-}
-.background span:nth-child(3) {
-   color: #E45A84;
-   top: 48%;
-   left: 78%;
-   animation-duration: 47s;
-   animation-delay: -21s;
-   transform-origin: 10vw -15vh;
-   box-shadow: 40vmin 0 5.778751048333703vmin currentColor;
-}
-.background span:nth-child(4) {
-   color: #583C87;
-   top: 90%;
-   left: 95%;
-   animation-duration: 47s;
-   animation-delay: -17s;
-   transform-origin: 8vw -20vh;
-   box-shadow: -40vmin 0 5.513048320082669vmin currentColor;
-}
-.background span:nth-child(5) {
-   color: #583C87;
-   top: 1%;
-   left: 74%;
-   animation-duration: 31s;
-   animation-delay: -48s;
-   transform-origin: -12vw -16vh;
-   box-shadow: -40vmin 0 5.789132815713749vmin currentColor;
-}
-.background span:nth-child(6) {
-   color: #583C87;
-   top: 17%;
-   left: 69%;
-   animation-duration: 55s;
-   animation-delay: -38s;
-   transform-origin: -1vw -8vh;
-   box-shadow: 40vmin 0 5.541707950863258vmin currentColor;
-}
-.background span:nth-child(7) {
-   color: #E45A84;
-   top: 67%;
-   left: 69%;
-   animation-duration: 55s;
-   animation-delay: -16s;
-   transform-origin: -6vw -19vh;
-   box-shadow: 40vmin 0 5.117326186666188vmin currentColor;
-}
-.background span:nth-child(8) {
-   color: #583C87;
-   top: 11%;
-   left: 78%;
-   animation-duration: 22s;
-   animation-delay: -27s;
-   transform-origin: -18vw 5vh;
-   box-shadow: 40vmin 0 5.374271263482658vmin currentColor;
-}
-.background span:nth-child(9) {
-   color: #E45A84;
-   top: 77%;
-   left: 72%;
-   animation-duration: 36s;
-   animation-delay: -47s;
-   transform-origin: 21vw -10vh;
-   box-shadow: 40vmin 0 5.085948075007543vmin currentColor;
-}
-.background span:nth-child(10) {
-   color: #E45A84;
-   top: 14%;
-   left: 12%;
-   animation-duration: 47s;
-   animation-delay: -24s;
-   transform-origin: 3vw -9vh;
-   box-shadow: 40vmin 0 5.973182229845756vmin currentColor;
-}
-.background span:nth-child(11) {
-   color: #FFACAC;
-   top: 61%;
-   left: 7%;
-   animation-duration: 19s;
-   animation-delay: -34s;
-   transform-origin: -2vw -16vh;
-   box-shadow: 40vmin 0 5.042702712718506vmin currentColor;
-}
-.background span:nth-child(12) {
-   color: #E45A84;
-   top: 44%;
-   left: 22%;
-   animation-duration: 14s;
-   animation-delay: -43s;
-   transform-origin: -17vw 23vh;
-   box-shadow: -40vmin 0 5.930682329575907vmin currentColor;
-}
-.background span:nth-child(13) {
-   color: #583C87;
-   top: 12%;
-   left: 34%;
-   animation-duration: 22s;
-   animation-delay: -14s;
-   transform-origin: 0vw 4vh;
-   box-shadow: -40vmin 0 5.155496574735508vmin currentColor;
-}
-.background span:nth-child(14) {
-   color: #E45A84;
-   top: 91%;
-   left: 42%;
-   animation-duration: 18s;
-   animation-delay: -21s;
-   transform-origin: -16vw -1vh;
-   box-shadow: 40vmin 0 5.274146567423962vmin currentColor;
-}
-.background span:nth-child(15) {
-   color: #E45A84;
-   top: 23%;
-   left: 54%;
-   animation-duration: 17s;
-   animation-delay: -6s;
-   transform-origin: -14vw 19vh;
-   box-shadow: 40vmin 0 5.308256816885867vmin currentColor;
-}
-.background span:nth-child(16) {
-   color: #E45A84;
-   top: 16%;
-   left: 9%;
-   animation-duration: 8s;
-   animation-delay: -9s;
-   transform-origin: 12vw 10vh;
-   box-shadow: -40vmin 0 5.744028174308525vmin currentColor;
-}
-.background span:nth-child(17) {
-   color: #FFACAC;
-   top: 99%;
-   left: 19%;
-   animation-duration: 16s;
-   animation-delay: -10s;
-   transform-origin: -23vw 16vh;
-   box-shadow: -40vmin 0 5.252912347449039vmin currentColor;
-}
-.background span:nth-child(18) {
-   color: #E45A84;
-   top: 54%;
-   left: 4%;
-   animation-duration: 52s;
-   animation-delay: -4s;
-   transform-origin: 11vw 6vh;
-   box-shadow: -40vmin 0 5.54310687198379vmin currentColor;
-}
-.background span:nth-child(19) {
-   color: #FFACAC;
-   top: 44%;
-   left: 4%;
-   animation-duration: 40s;
-   animation-delay: -34s;
-   transform-origin: 24vw -24vh;
-   box-shadow: 40vmin 0 5.019515274748757vmin currentColor;
+.wave:nth-of-type(3) {
+   bottom: -2.5em;
+   animation: wave 20s -1s reverse infinite;
+   opacity: 0.9;
 }
 
+@keyframes wave {
+   2% {
+       transform: translateX(1);
+   }
 
+   25% {
+       transform: translateX(-25%);
+   }
 
+   50% {
+       transform: translateX(-50%);
+   }
+
+   75% {
+       transform: translateX(-25%);
+   }
+
+   100% {
+       transform: translateX(1);
+   }
+}
 
 .menu {
     grid-column: 2;
@@ -234,7 +91,7 @@
     text-decoration: underline;
     font-weight: lighter;
     font-style: italic;
-    background-color: #330033;
+    background-image: linear-gradient(336deg, rgba(81, 81, 81,0.05) 0%, rgba(81, 81, 81,0.05) 50%,rgba(80, 80, 80,0.05) 50%, rgba(80, 80, 80,0.05) 100%),linear-gradient(359deg, rgba(25, 25, 25,0.05) 0%, rgba(25, 25, 25,0.05) 50%,rgba(25, 25, 25,0.05) 50%, rgba(25, 25, 25,0.05) 100%),linear-gradient(96deg, rgba(150, 150, 150,0.05) 0%, rgba(150, 150, 150,0.05) 50%,rgba(57, 57, 57,0.05) 50%, rgba(57, 57, 57,0.05) 100%),linear-gradient(257deg, rgba(68, 68, 68,0.05) 0%, rgba(68, 68, 68,0.05) 50%,rgba(48, 48, 48,0.05) 50%, rgba(48, 48, 48,0.05) 100%),linear-gradient(286deg, rgba(237, 237, 237,0.05) 0%, rgba(237, 237, 237,0.05) 50%,rgba(192, 192, 192,0.05) 50%, rgba(192, 192, 192,0.05) 100%),linear-gradient(54deg, rgba(92, 92, 92,0.05) 0%, rgba(92, 92, 92,0.05) 50%,rgba(212, 212, 212,0.05) 50%, rgba(212, 212, 212,0.05) 100%),linear-gradient(354deg, rgba(122, 122, 122,0.05) 0%, rgba(122, 122, 122,0.05) 50%,rgba(215, 215, 215,0.05) 50%, rgba(215, 215, 215,0.05) 100%),radial-gradient(circle at center center, rgb(201, 42, 226),rgb(42, 22, 204));;
     border: 2px inset black;
 border-radius: 40%;
 box-shadow : 10px 10px 15px black; 
@@ -309,8 +166,7 @@ box-shadow : 10px 10px 15px black;
 
 .TopicUn
 {
-    background-image: radial-gradient(circle at top right, rgb(36, 9, 119) 0%, rgb(36, 9, 119) 48%,rgb(72, 7, 149) 48%, rgb(72, 7, 149) 53%,rgb(109, 5, 178) 53%, rgb(109, 5, 178) 56%,rgb(145, 2, 208) 56%, rgb(145, 2, 208) 69%,rgb(181, 0, 237) 69%, rgb(181, 0, 237) 100%);;
-        font-size: larger;
+   background-image: radial-gradient(circle at 87% 4%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 51% 31%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 58% 26%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 4% 34%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 30% 82%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 68% 92%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 19% 32%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 50% 41%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 46% 3%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 49% 58%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),linear-gradient(0deg, rgb(52, 208, 235),rgb(68, 23, 221));        font-size: larger;
         font-family: cursive;
         text-align:center;
         color: whitesmoke;
@@ -318,12 +174,12 @@ box-shadow : 10px 10px 15px black;
         border: 5px outset darkblue;
         border-radius: 30%;
         position:relative;
-        bottom:150px
+        bottom:150px;
+        box-shadow: inset 3px 5px 45px ;
 }
 
 .TopicDeux{
-    background-image: linear-gradient(90deg, rgb(237, 237, 237),rgb(236, 236, 236)),linear-gradient(135deg, rgb(163, 125, 62) 0%, rgb(163, 125, 62) 22%,rgb(149, 100, 59) 22%, rgb(149, 100, 59) 32%,rgb(134, 75, 56) 32%, rgb(134, 75, 56) 37%,rgb(120, 50, 53) 37%, rgb(120, 50, 53) 51%,rgb(105, 25, 50) 51%, rgb(105, 25, 50) 55%,rgb(91, 0, 47) 55%, rgb(91, 0, 47) 100%),linear-gradient(112.5deg, rgb(163, 125, 62) 0%, rgb(163, 125, 62) 22%,rgb(149, 100, 59) 22%, rgb(149, 100, 59) 32%,rgb(134, 75, 56) 32%, rgb(134, 75, 56) 37%,rgb(120, 50, 53) 37%, rgb(120, 50, 53) 51%,rgb(105, 25, 50) 51%, rgb(105, 25, 50) 55%,rgb(91, 0, 47) 55%, rgb(91, 0, 47) 100%),linear-gradient(90deg, rgb(163, 125, 62) 0%, rgb(163, 125, 62) 22%,rgb(149, 100, 59) 22%, rgb(149, 100, 59) 32%,rgb(134, 75, 56) 32%, rgb(134, 75, 56) 37%,rgb(120, 50, 53) 37%, rgb(120, 50, 53) 51%,rgb(105, 25, 50) 51%, rgb(105, 25, 50) 55%,rgb(91, 0, 47) 55%, rgb(91, 0, 47) 100%); background-blend-mode:overlay, overlay, overlay, normal;;
-    font-size: larger;
+   background-image: radial-gradient(circle at 69% 3%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 85% 72%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 43% 49%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 12% 98%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 37% 52%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 22% 59%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 25% 56%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 22% 79%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 80% 81%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 52% 16%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),linear-gradient(135deg, rgb(205, 220, 48),rgb(224, 17, 25));    font-size: larger;
     font-family: cursive;
     text-align: center;
     color: whitesmoke;
@@ -332,6 +188,22 @@ box-shadow : 10px 10px 15px black;
     border-radius: 20%;
     position: relative;
     left:1000px;
+    box-shadow : 3px 15px 45px inset;
 }
+
+.TopicTrois{
+background-image: radial-gradient(circle at 91% 26%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 27% 63%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 59% 48%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 58% 65%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 55% 21%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 88% 4%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 9% 23%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 40% 78%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 78% 5%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 11% 87%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 11% 24%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 18% 75%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 71% 80%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 34% 79%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 9% 51%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 46% 69%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 54% 90%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 55% 58%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 95% 37%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 9% 4%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 5%,transparent 5%, transparent 100%),linear-gradient(135deg, rgb(249, 93, 202),rgb(11, 13, 179));
+   font-size: larger;
+    font-family: cursive;
+    text-align: center;
+    color: whitesmoke;
+    width:350px;
+    height: auto;
+    right:0px;
+    border: 5px inset purple;
+    border-radius: 20%;
+    position: relative;
+    box-shadow: 10px 20px 30px inset;
+    }
 
 
